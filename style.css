@@ -25,18 +25,14 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 20px;
     position: relative;
-    background-image: url(images/unnamed.jpg);
+    background-image: url(images/IMG_2075.JPG);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: 87% 28%;
 }
-
-/* @media (max-width: px) {
-    main {
-        height: 50vh;
-    }
-} */
 
 main h1 {
     color: white;
@@ -44,7 +40,29 @@ main h1 {
     z-index: 111;
 }
 
-section {
+@media (main-width: 900px) {
+    main h1 {
+        color: #0a1c12;
+    }
+}
+
+main a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    background-color: #138275;
+    padding: 16px 40px;
+    border: 1px solid #138275;
+    border-radius: 8px;
+    transition: .6s ease-in;
+}
+
+main a:hover {
+    color: #138275;
+    background-color: white;
+}
+
+section.contact {
     padding: 50px;
     text-align: center;
 }
@@ -65,9 +83,8 @@ section .location, section .image {
     width: 45%;
 }
 
-section iframe {
-    width: 100%;
-    height: 100%;
+section.contact img {
+    border-radius: 10px;
 }
 
 section a:hover {
@@ -78,7 +95,7 @@ section .contanier {
     display: flex;
     text-align: center;
     justify-content: center;
-    gap: 50px;
+    gap: 25px;
     padding-block: 30px;
 }
 
@@ -92,4 +109,47 @@ footer {
 
 footer p {
     font-size: 30px;
+}
+
+.gallery-image {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-inline: 70px;
+    text-align: center;
+}
+
+.gallery-image h2 {
+    margin-block: 30px;
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: circularScroll 10s linear infinite forwards;
+}
+
+.gallery img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes circularScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.gallery-wrapper {
+    display: flex;
+    width: max-content;
 }
